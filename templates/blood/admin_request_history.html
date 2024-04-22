@@ -1,76 +1,37 @@
 {% extends 'blood/adminbase.html' %}
+
 {% block content %}
-{% load widget_tweaks %}
-{%load static%}
-<head>
- <style>
-     .label {
-  color: white;
-  padding: 8px;
-}
-
-.success {background-color: #4CAF50;} /* Green */
-.info {background-color: #2196F3;} /* Blue */
-.warning {background-color: #ff9800;} /* Orange */
-.danger {background-color: #f44336;} /* Red */
-.other {background-color: #e7e7e7; color: black;} /* Gray */
- </style>
-</head>
-<br><br>
-<div class="container">
-    <H4 class="text-center">Blood Request History</H4><br>
-    {% if message %}
-   <h5 class="text-center" style="color: red;"> {{message}}</h5><br>
-{% else %}
-
-{% endif %}
-    <table class="table table-light table-hover table-bordered table-striped">
-        <thead class="bg-info">
-            <tr>
-                <th scope="col">Patient Name</th>
-                <th scope="col">Age</th>
-                
-                <th scope="col">Reason</th>
-                <th scope="col">Blood Group</th>
-                <th scope="col">Unit (in ml)</th>
-                <th scope="col">Date</th>
-                <th scope="col">Status</th>
-                <th scope="col">Stock Status</th>
-               
-            </tr>
-        </thead>
-        <tbody>
-            {% for t in requests %}
-            <tr>
-                <td> {{t.patient_name}}</td>
-                <td>{{t.patient_age}}</td>
-                
-                
-                <td>{{t.reason}}</td>
-                <td>{{t.bloodgroup}}</td>
-                <td>{{t.unit}}</td>
-                <td>{{t.date}}</td>
-                {% if t.status == 'Approved' %}
-                <td><span class="label warning"> Approved</span></td>
-                <td><span class="label warning"> {{t.unit}} Unit Deducted From Stock</span></td>
-                {% else %}
-                <td><span class="label success">Rejected</span></td>
-                <td><span class="label success"> 0 Unit Deducted From Stock</span></td>
-                {% endif %}
-                
-                
-            
-            </tr>
-            {% endfor %}
-
-        </tbody>
-    
-    </table>
-</div>
-
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+    {% load widget_tweaks %}
+    {% load static %}
+    <br><br>
+    <div class="container">
+        <h4 class="text-center">Blood Request History</h4><br>
+        {% if message %}
+            <h5 class="text-center" style="color: red;">{{ message }}</h5><br>
+        {% endif %}
+        {% for t in requests %}
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Patient Name: {{ t.patient_name }}</h5>
+                            <p class="card-text">Age: {{ t.patient_age }}</p>
+                            <p class="card-text">Reason: {{ t.reason }}</p>
+                            <p class="card-text">Blood Group: {{ t.bloodgroup }}</p>
+                            <p class="card-text">Unit (in ml): {{ t.unit }}</p>
+                            <p class="card-text">Date: {{ t.date }}</p>
+                            {% if t.status == 'Approved' %}
+                                <p class="card-text">Status: <span class="label warning">Approved</span></p>
+                                <p class="card-text">Stock Status: <span class="label warning">{{ t.unit }} Unit Deducted From Stock</span></p>
+                            {% else %}
+                                <p class="card-text">Status: <span class="label success">Rejected</span></p>
+                                <p class="card-text">Stock Status: <span class="label success">0 Unit Deducted From Stock</span></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
 {% endblock content %}

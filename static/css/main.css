@@ -269,38 +269,43 @@ h6 {
 
 /* ==========================================================================
    #BACKGROUND
-   ========================================================================== */
-.bg-blue {
-  background: #2c6ed5;
-}
+ 
+  .bg-blue {
+  background: #7aa6da; /* A serene, sky blue */
 
-.bg-red {
-  background: #fa4251;
-}
+  .bg-blue {
+    background: #7a85da; /* A complementary soft blue */
+  }
+  
+  .bg-red {
+    background: #c90213; /* Keeping your chosen vibrant red */
+  }
+  
+  .bg-gra-01 {
+    background: -webkit-gradient(linear, left bottom, left top, from(#f78fa7), to(#fae3d9));
+    background: -webkit-linear-gradient(bottom, #f78fa7 0%, #fae3d9 100%);
+    background: -moz-linear-gradient(bottom, #f78fa7 0%, #fae3d9 100%);
+    background: -o-linear-gradient(bottom, #f78fa7 0%, #fae3d9 100%);
+    background: linear-gradient(to top, #f78fa7 0%, #fae3d9 100%); /* A gradient from soft pink to a light peach, softening the intensity of red */
+  }
+  
+  .bg-gra-02 {
+    background: -webkit-gradient(linear, left bottom, right top, from(#ff867a), to(#ffd4ca));
+    background: -webkit-linear-gradient(bottom left, #ff867a 0%, #ffd4ca 100%);
+    background: -moz-linear-gradient(bottom left, #ff867a 0%, #ffd4ca 100%);
+    background: -o-linear-gradient(bottom left, #ff867a 0%, #ffd4ca 100%);
+    background: linear-gradient(to top right, #ff867a 0%, #ffd4ca 100%); /* A warm coral to peach gradient, complementing red with soft transitions */
+  }
+  
+  .bg-gra-03 {
+    background: -webkit-gradient(linear, left bottom, right top, from(#ff9999), to(#ffcccc));
+    background: -webkit-linear-gradient(bottom left, #ff9999 0%, #ffcccc 100%);
+    background: -moz-linear-gradient(bottom left, #ff9999 0%, #ffcccc 100%);
+    background: -o-linear-gradient(bottom left, #ff9999 0%, #ffcccc 100%);
+    background: linear-gradient(to top right, #ff9999 0%, #ffcccc 100%); /* A gradient from light red to pale pink, maintaining the red theme with a gentle fade */
+  }
+  
 
-.bg-gra-01 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
-  background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-  background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-  background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-  background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
-}
-
-.bg-gra-02 {
-  background: -webkit-gradient(linear, left bottom, right top, from(#fc2c77), to(#6c4079));
-  background: -webkit-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
-  background: -moz-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
-  background: -o-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
-  background: linear-gradient(to top right, #fc2c77 0%, #6c4079 100%);
-}
-
-.bg-gra-03 {
-  background: -webkit-gradient(linear, left bottom, right top, from(#08aeea), to(#b721ff));
-  background: -webkit-linear-gradient(bottom left, #08aeea 0%, #b721ff 100%);
-  background: -moz-linear-gradient(bottom left, #08aeea 0%, #b721ff 100%);
-  background: -o-linear-gradient(bottom left, #08aeea 0%, #b721ff 100%);
-  background: linear-gradient(to top right, #08aeea 0%, #b721ff 100%);
-}
 
 /* ==========================================================================
    #SPACING
@@ -418,11 +423,11 @@ h6 {
 }
 
 .btn--green {
-  background: #57b846;
+  background: #105eb2;
 }
 
 .btn--green:hover {
-  background: #4dae3c;
+  background: #195aaf;
 }
 
 .btn--blue {
@@ -430,15 +435,15 @@ h6 {
 }
 
 .btn--blue:hover {
-  background: #3868cd;
+  background: #a2a1a1;
 }
 
 .btn--red {
-  background: #ff4b5a;
+  background: #eed42a;
 }
 
 .btn--red:hover {
-  background: #eb3746;
+  background: #eb8237;
 }
 
 /* ==========================================================================
@@ -738,17 +743,17 @@ input {
 
 .card-5 {
   background: #fff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
   -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(5, 114, 5, 0.15);
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
 .card-5 .card-heading {
-  padding: 20px 0;
-  background: #1a1a1a;
+  padding: 25px 0;
+  background: #270196;
   -webkit-border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   border-top-left-radius: 10px;
@@ -758,7 +763,7 @@ input {
 }
 
 .card-5 .card-body {
-  padding: 52px 85px;
+  padding: 80px 80px;
   padding-bottom: 73px;
 }
 

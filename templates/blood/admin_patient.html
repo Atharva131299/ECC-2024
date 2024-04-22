@@ -1,47 +1,31 @@
 {% extends 'blood/adminbase.html' %}
+
 {% block content %}
-{% load widget_tweaks %}
-{%load static%}
-<br><br>
-<div class="container">
-    <H4 class="text-center">PATIENT DETAILS</H4><br>
-    <table class="table table-light table-hover table-bordered table-striped">
-        <thead class="bg-info">
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Profile</th>
-                <th scope="col">Blood Group</th>
-                <th scope="col">Age</th>
-                <th scope="col">Disease</th>
-                <th scope="col">Mobile</th>
-                <th class="text-right">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for t in patients %}
-            <tr>
-                <td> {{t.get_name}}</td>
-                <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-                <td>{{t.bloodgroup}}</td>
-                <td>{{t.age}}</td>
-                <td>{{t.disease}}</td>
-                <td>{{t.mobile}}</td>
-                
-                <td class="text-right">
-                    <button class="btn btn-primary badge-pill" style="width: 80px;"><a  style="text-decoration: none;color: white;" href="{% url 'update-patient' t.id  %}">EDIT</a> </button>
-                    <button class="btn btn-danger badge-pill" style="width: 80px;"><a  style="text-decoration: none;color: white;" href="{% url 'delete-patient' t.id  %}">DELETE</a> </button>
-                </td>
-            </tr>
-            {% endfor %}
-
-        </tbody>
-    
-    </table>
-</div>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
-
+    {% load widget_tweaks %}
+    {% load static %}
+    <br><br>
+    <div class="container">
+        <h4 class="text-center">PATIENT DETAILS</h4><br>
+        {% for t in patients %}
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Name: {{ t.get_name }}</h5>
+                            <p class="card-text">Blood Group: {{ t.bloodgroup }}</p>
+                            <p class="card-text">Age: {{ t.age }}</p>
+                            <p class="card-text">Disease: {{ t.disease }}</p>
+                            <p class="card-text">Mobile: {{ t.mobile }}</p>
+                            <img src="{% static t.profile_pic.url %}" alt="Profile Pic" class="img-fluid">
+                            <div class="text-right mt-3">
+                                <a href="{% url 'update-patient' t.id %}" class="btn" style="background-color: #6c757d; color: #fff;">EDIT</a>
+                                <a href="{% url 'delete-patient' t.id %}" class="btn" style="background-color: #000000; color: #fff;">DELETE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
 {% endblock content %}

@@ -3,7 +3,7 @@
 <head>
     <style>
             .xyz{     
-        color: blue; 
+        color: rgb(255, 0, 34); 
         font-size: 3ex;   
     }
     </style>
@@ -20,7 +20,7 @@
                 <i class="fas fa-sync-alt xyz"></i>
               </div><br>
               <div>
-                Request Made <br>
+                Request Made(#) <br>
                   {{requestmade}}
               </div>                            
           </div>
@@ -34,7 +34,7 @@
                   <i class="fas fa-sync xyz"></i>
                 </div><br>
                 <div>
-                    Pending Request <br>
+                    Pending Request(#) <br>
                     {{requestpending}}
                 </div>                            
             </div>
@@ -48,7 +48,7 @@
                     <i class="fas fa-check-circle xyz"></i>
                   </div><br>
                   <div>
-                       Approved Request<br>
+                       Approved Request(#)<br>
                       {{requestapproved}}
                   </div>                            
               </div>
@@ -61,7 +61,7 @@
                     <i class="fas fa-times-circle xyz"></i>
                   </div><br>
                   <div>
-                       Rejected Request <br>
+                       Rejected Request(#) <br>
                       {{requestrejected}}
                   </div>                            
               </div>
@@ -71,9 +71,4 @@
     </div>
 </div>
 
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
 {% endblock content %}
